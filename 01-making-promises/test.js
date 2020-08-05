@@ -16,7 +16,7 @@ describe('Promise.resolve: (val:T) => Promise<T>', () => {
     });
   });
 });
-
+ 
 describe('Promise.reject: (err:T) => Promise<,T>', () => {
   describe('#makePromiseRejectWithBoo:() => Promise<,string>', () => {
     it('creates a rejecting promise', () => {

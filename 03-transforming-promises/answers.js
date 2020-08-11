@@ -7,15 +7,15 @@
  * @returns {Promise}
  */
 function mapPromise(promise, transformer) {
-  return new Promise((resolve, reject) => {
-    promise.then(resault => {
-      resolve(transformer(resault))
-    }).catch(err => {
-      reject(err);
-    })
+    return new Promise((resolve, reject) => {
+        promise.then(resault => {
+            resolve(transformer(resault))
+        }).catch(err => {
+            reject(err);
+        })
 
-    /* IMPLEMENT ME!! */
-  });
+        /* IMPLEMENT ME!! */
+    });
 }
 
 /**
@@ -38,16 +38,16 @@ function mapPromise(promise, transformer) {
 
 
 function squarePromise(numberPromise) {
-  return numberPromise
-    .then(res => {
-      return new Promise((resolve, reject) => {
-        if (!isNaN(res)) {
-          resolve(res * res)
-        } else {
-          reject(`Cannot convert '${res}' to a number!`)
-        }
-      })
-    })
+    return numberPromise
+        .then(res => {
+            return new Promise((resolve, reject) => {
+                if (!isNaN(res)) {
+                    resolve(res * res)
+                } else {
+                    reject(`Cannot convert '${res}' to a number!`)
+                }
+            })
+        })
 }
 
 
@@ -59,12 +59,12 @@ function squarePromise(numberPromise) {
  * @returns {Promise<number>}
  */
 function squarePromiseOrZero(promise) {
-  return squarePromise(promise)
-    .catch(() => {
-      return new Promise((resolve) => {
-        resolve(0)
-      });
-    });
+    return squarePromise(promise)
+        .catch(() => {
+            return new Promise((resolve) => {
+                resolve(0)
+            });
+        });
 }
 
 /**
@@ -75,15 +75,15 @@ function squarePromiseOrZero(promise) {
  */
 
 function switcheroo(promise) {
-  // const myPromise = new Promise((resolve, reject) => {
-  //   promise.then(reject).catch(resolve);
-  // });
-  // return myPromise;
-  return promise.then(
-    value => Promise.reject(value), // function that takes an argument and passes it to Promise.reject function
-    reason => Promise.resolve(reason)
-  );
-  //return promise.then(Promise.reject(val),Promise.resolve(err))
+    // const myPromise = new Promise((resolve, reject) => {
+    //   promise.then(reject).catch(resolve);
+    // });
+    // return myPromise;
+    return promise.then(
+        value => Promise.reject(value), // function that takes an argument and passes it to Promise.reject function
+        reason => Promise.resolve(reason)
+    );
+    //return promise.then(Promise.reject(val),Promise.resolve(err))
 };
 
 /**
@@ -97,8 +97,8 @@ function switcheroo(promise) {
  */
 
 module.exports = {
-  mapPromise,
-  squarePromise,
-  squarePromiseOrZero,
-  switcheroo,
+    mapPromise,
+    squarePromise,
+    squarePromiseOrZero,
+    switcheroo,
 };

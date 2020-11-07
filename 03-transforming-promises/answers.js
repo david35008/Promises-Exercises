@@ -26,15 +26,6 @@ function mapPromise(promise, transformer) {
  * @returns {Promise<number>}
  */
 
-// function squarePromise(numberPromise) {
-//   return numberPromise.then(val => {
-//     if (!isNaN(val)) {
-//       return val * val;
-//     } 
-//   }).catch(err => {
-//     throw new Error `Cannot convert ${err} to a number!`
-//   });
-// };
 
 
 function squarePromise(numberPromise) {

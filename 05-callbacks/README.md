@@ -1,5 +1,7 @@
 # Callbacks
 
+## my solution on exercise 1 branch
+
 This set of exercises is all about making promises from one particular format: node-style callbacks.
 
 Node-style callbacks, or error-first callbacks, are simple callbacks for async processes.  They have two possible params: an error if the async process failed, and a value if the async process succeeded.  [Here's an article discussing them further](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/).
